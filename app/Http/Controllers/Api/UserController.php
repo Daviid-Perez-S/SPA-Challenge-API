@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\UserResource;
 use App\Http\Resources\UserResourceCollection;
+use App\Exceptions\Handler;
+use Exception;
 use App\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
@@ -72,7 +74,12 @@ class UserController extends Controller
      */
     public function show(User $user)
     {
-        return (new UserResource($user))->response();
+        try {
+            return (new UserResource($user))->response();
+        } catch (Exceptionk $e) {
+            report($e);
+            return false;
+        }
     }
 
     /**
