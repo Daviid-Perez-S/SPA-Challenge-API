@@ -50,7 +50,7 @@ class UserController extends Controller
         $request->validate([
             'name' => 'bail|required|string|max:255',
             'email' => 'bail|required|string|max:255|email|unique:users,email',
-            'password' => 'bail|required|string|min:8'
+            'password' => 'bail|required|string|min:5'
         ]);
 
         $user = new User();

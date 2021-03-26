@@ -14,4 +14,13 @@ class Episode extends Model
     protected $fillable = [
         'sku', 'name', 'air_date',
     ];
+
+    /**
+     * The attributes that should be cast to native types.
+     *
+     * @var array
+     */
+    protected $casts = [
+        'air_date' => 'date:d-m-Y',
+    ];
 }
