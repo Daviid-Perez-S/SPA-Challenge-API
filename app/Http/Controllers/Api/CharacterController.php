@@ -45,7 +45,6 @@ class CharacterController extends Controller
                 'location.link' => 'nullable'
             ]);
             
-            // $character = Character::find($character->name);
             $character->name = $request->input('name');
             $character->location = $request->input('location');
     
