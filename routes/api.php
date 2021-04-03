@@ -23,6 +23,7 @@ Route::namespace('Api')->group(function () {
         Route::get('users/{user}', 'UserController@show')->name('users.show');
         Route::put('users/{user}', 'UserController@update')->name('users.update');
         Route::delete('users/{user}', 'UserController@destroy')->name('users.destroy');
+    });
 
         // Episodes routes
         Route::get('episodes', 'EpisodeController@index')->name('episodes.index');
@@ -36,10 +37,9 @@ Route::namespace('Api')->group(function () {
 
         // Logout user
         Route::get('logout', 'AuthController@logout')->name('auth.logout');
-    });
 
     // Save a new user
-    Route::post('users', 'UserController@store')->name('users.store');
+    // Route::post('users', 'UserController@store')->name('users.store');
 
 });
 
