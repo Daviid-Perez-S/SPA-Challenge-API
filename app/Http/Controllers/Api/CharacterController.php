@@ -21,7 +21,7 @@ class CharacterController extends Controller
     public function index()
     {
         try {
-            $characters = Character::all();
+            $characters = Character::orderBy('id', 'asc')->get();
             return (new CharacterResourceCollection($characters))->response();
         } catch (Exception $e) {
             report($e);
